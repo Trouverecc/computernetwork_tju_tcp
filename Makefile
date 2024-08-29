@@ -27,6 +27,9 @@ server: $(OBJS)
 client:
 	$(CC) $(FLAGS) ./src/client.c -o client $(OBJS) 
 
-
+test: clean server client
+	./test/test establish
+	./test/test close
+	./test/test rdt
 
 	
