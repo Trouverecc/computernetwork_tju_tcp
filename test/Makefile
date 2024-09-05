@@ -12,7 +12,7 @@ default:all
 all: clean test_client test_server rdt_server rdt_client close_client
 
 clean:
-	-rm -f test_client test_server rdt_server rdt_client close_client client.log server.log rdt_server.log rdt_client.log
+	-rm -f test_client test_server rdt_server rdt_client close_client client.log server.log rdt_server.log rdt_client.log rdt_recv_file.txt
 
 test_client:
 	gcc -pthread -g -ggdb -DDEBUG -I../inc ./test_client.c -o test_client $(OBJS)
