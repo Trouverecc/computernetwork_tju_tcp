@@ -63,6 +63,9 @@ char* create_packet_buf(uint16_t src, uint16_t dst, uint32_t seq, uint32_t ack,
  */
 void free_packet(tju_packet_t* packet);
 
+// debug 使用
+void print_packet_header(char* packet);
+
 /*
  下面的函数全部都是从一个packet的字符串中
  根据各个字段的偏移量
@@ -86,5 +89,3 @@ char* header_in_char(uint16_t src, uint16_t dst, uint32_t seq, uint32_t ack,
     uint8_t ext);
 
 #endif
-
-

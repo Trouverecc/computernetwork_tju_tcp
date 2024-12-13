@@ -195,7 +195,6 @@ char* packet_to_buf(tju_packet_t* p){
         memcpy(msg+(p->header.hlen), p->data, (p->header.plen - (p->header.hlen)));
     }
         
+
     return msg;
 }
-
-

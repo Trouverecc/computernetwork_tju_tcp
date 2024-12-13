@@ -7,14 +7,8 @@
 #include "tju_tcp.h"
 
 #define MAX_SOCK 32
-tju_tcp_t* listen_socks[MAX_SOCK];//监听socket表 lhash
-tju_tcp_t* established_socks[MAX_SOCK];//建立连接socket表ehash；
-tju_tcp_t* synqueue[MAX_SOCK];//半连接列表：存放收到SYN但是没收到ACK的sock
-tju_tcp_t* acceptqueue[MAX_SOCK];//全连接列表：存放收到SYN但是没收到ACK的sock
-// tju_tcp_t* bind_socks[MAX_SOCK];//监听socket表 lhash
-
-
-int acceptqueue_n;
+tju_tcp_t* listen_socks[MAX_SOCK];
+tju_tcp_t* established_socks[MAX_SOCK];
 
 /*
 模拟Linux内核收到一份TCP报文的处理函数
@@ -56,5 +50,3 @@ int BACKEND_UDPSOCKET_ID;
 int cal_hash(uint32_t local_ip, uint16_t local_port, uint32_t remote_ip, uint16_t remote_port);
 
 #endif
-
-
